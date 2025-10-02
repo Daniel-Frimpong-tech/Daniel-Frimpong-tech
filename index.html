@@ -155,10 +155,10 @@
         <div class="hidden sm:ml-6 sm:block">
           <div class="absolute right-0 flex space-x-4 hover:cursor-pointer ">
             <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-            <a href="#home" aria-current="page" class=" bg-gray-950/50 px-3 py-2 text-sm font-medium text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">Home</a>
-            <a href="#about" class=" px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">About</a>
-            <a href="projects.html" class=" px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">Projects</a>
-            <a href="contact.html" class=" px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">Contact</a>
+            <a href="#home" aria-current="page" class=" bg-gray-950/50 font-lobster px-3 py-2 text-sm font-medium text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">Home</a>
+            <a href="#about" class=" font-lobster px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">About</a>
+            <a href="projects.html" class=" font-lobster px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">Projects</a>
+            <a href="contact.html" class=" font-lobster px-3 py-2 text-sm font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">Contact</a>
           </div>
         </div>
       </div>
@@ -168,9 +168,9 @@
   <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
     <div class="space-y-1 px-2 pt-2 pb-3">
       <a href="#home" aria-current="page" class="block  bg-gray-950/50 px-3 py-2 text-base font-medium text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500">Home</a>
-      <a href="#about" class="block  px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">About</a>
-      <a href="projects.html" class="block  px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">Projects</a>
-      <a href="contact.html" class="block  px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500">Contact</a>
+      <a href="#about" class="block font-lobster px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">About</a>
+      <a href="projects.html" class="block font-lobster   px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">Projects</a>
+      <a href="contact.html" class="block font-lobster px-3 py-2 text-base font-medium text-gray-300  hover:text-white hover:bg-gray-950/50 hover:border-b-4 border-b-indigo-500 active:border-b-4 border-b-indigo-500" style="font-family: 'Lobster Two', cursive;">Contact</a>
     </div>
   </el-disclosure> 
 </nav>
@@ -226,12 +226,10 @@
             </div>
         </div>
     </div> 
-    <a href="#about" aria-label="Scroll Down">
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </div>
+    <a href="#about" aria-label="Scroll Down" class="absolute z-50 bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:scale-110 transition-transform duration-300 cursor-pointer">
+        <svg class="w-8 h-8 text-white hover:text-indigo-400 transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
     </a>
 </section>
 
@@ -371,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed nav
+                const offsetTop = targetSection.offsetTop - 64; // Account for fixed nav (4rem = 64px)
                 window.scrollTo({
                     top: offsetTop,
                     behavior: 'smooth'
