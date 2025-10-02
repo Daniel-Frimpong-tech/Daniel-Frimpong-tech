@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Daniel Amoako-Frimpong</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@400;700&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#4f46e5',
+                        accent: '#3730a3',
+                    },
+                    fontFamily: {
+                        'lobster': ['"Lobster Two"', 'cursive'],
+                        'sans': ['system-ui', 'sans-serif'],
+                        'serif': ['Georgia', 'serif'],
+                        'mono': ['ui-monospace', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+  </head>
+  <body class="bg-black text-white" x-data="{ open: false, activeProject: {} }">
+    <!-- Navigation -->
+    <nav class="relative bg-black after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10">
+      <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <!-- Mobile menu button-->
+            <button type="button" command="--toggle" commandfor="mobile-menu" class="relative inline-flex items-center justify-center p-2 text-gray-400 hover:bg-white/5 hover:text-white focus:outline-2 focus:-outline-offset-1 focus:outline-indigo-500">
+              <span class="absolute -inset-0.5"></span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 in-aria-expanded:hidden">
+                <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 not-in-aria-expanded:hidden">
+                <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+            <div class="flex shrink-0 items-center">
+              <img src="./img/Daniell.png" alt="Daniel Amoako-Frimpong" class="h-8 w-auto" />
+            </div>
+            <div class="hidden sm:ml-6 sm:block">
+              <div class="absolute right-0 flex space-x-4 hover:cursor-pointer">
+                <a href="index.html" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">Home</a>
+                <a href="about.html" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">About</a>
+                <a href="projects.html" aria-current="page" class="bg-indigo-500/20 px-3 py-2 text-sm font-medium text-white border-b-4 border-b-indigo-500">Projects</a>
+                <a href="contact.html" class="px-3 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <el-disclosure id="mobile-menu" hidden class="block sm:hidden">
+        <div class="space-y-1 px-2 pt-2 pb-3">
+          <a href="index.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">Home</a>
+          <a href="about.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">About</a>
+          <a href="projects.html" aria-current="page" class="block bg-indigo-500/20 px-3 py-2 text-base font-medium text-white border-b-4 border-b-indigo-500">Projects</a>
+          <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-300 hover:text-white hover:bg-white/5 hover:border-b-4 border-b-indigo-500 transition-all duration-300">Contact</a>
+        </div>
+      </el-disclosure> 
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-screen bg-black">
+      <!-- Hero Section -->
+      <section class="py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h1 class="font-lobster text-5xl font-bold mb-4 text-white" style="font-family: 'Lobster Two', cursive;">My Projects</h1>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="py-16 bg-black text-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <!-- GSM Smart Farming System -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="aspect-w-16 aspect-h-9">
+                <iframe 
+                  src="https://www.youtube.com/embed/UW1LsexSrEE" 
+                  title="SwiftUI weather App Demo"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  class="w-full h-48 object-cover">
+                </iframe>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-white">SwiftUI weather App</h3>
+                  <span class="px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full">SwiftUI</span>
+                </div>
+                <p class="text-gray-300 mb-4">
+                  This is a demo that shows a weather application built using SwiftUI, integrating Azure services for backend support. The app fetches and displays real-time weather data, demonstrating skills in mobile app development and cloud integration.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Azure</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">SwiftUI</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Node.js</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">MongoDB</span>
+                </div>
+                <div class="flex space-x-3">
+                  <a href="https://youtu.be/UW1LsexSrEE" target="_blank" class="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Full Video</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="aspect-w-16 aspect-h-9">
+                <iframe 
+                  src="https://www.youtube.com/embed/m3ptNx7EmwI" 
+                  title="Technical Project Presentation"
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen
+                  class="w-full h-48 object-cover">
+                </iframe>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-white">Game Engine Dev: Debugging and Advanced Physics Functionality</h3>
+                  <span class="px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">C++</span>
+                </div>
+                <p class="text-gray-300 mb-4">
+                  This is a demo that shows the debugging process and implementation of advanced physics functionalities in a custom game engine built with C++. 
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">C++</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Prime Engine</span>
+                </div>
+                <div class="flex space-x-3">
+                  <a href="https://youtu.be/m3ptNx7EmwI" target="_blank" class="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <span>Full Video</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Research Documentation -->
+            <div class="bg-gray-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+              <div class="h-48 relative overflow-hidden">
+                <img 
+                  src="./img/Schematic-Diagram-of-the-Microcontroller-based-system.png" 
+                  alt="Smart Farming Research Paper" 
+                  class="w-full h-full object-cover"
+                >
+                <!-- Overlay with icon -->
+                <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent flex items-center justify-center">
+                  <div class="bg-white/20 rounded-full p-3 backdrop-blur-sm">
+                    <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xl font-bold text-white">Smart Farming Research Paper</h3>
+                  <span class="px-3 py-1 bg-purple-100 text-purple-800 text-xs font-semibold rounded-full">Research</span>
+                </div>
+                <p class="text-gray-300 mb-4">
+                  Published research paper: "A Proposed GSM Based Smart Farming System" documenting the theoretical framework, methodology, system architecture, and experimental results of the IoT-based agricultural monitoring solution.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Research Methodology</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Academic Writing</span>
+                  <span class="px-2 py-1 bg-gray-700 text-gray-300 text-xs rounded">Publication</span>
+                </div>
+                <div class="flex space-x-3">
+                  <a href="https://www.researchgate.net/publication/372395386_A_Proposed_GSM_Based_Smart_Farming_System" target="_blank" class="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span>Read Paper</span>
+                  </a>
+                  <a href="https://www.researchgate.net/profile/Daniel_Amoako-Frimpong/publication/372395386_A_Proposed_GSM_Based_Smart_Farming_System/links/64b3d6e395bbbe0c6e3e36ba/A-Proposed-GSM-Based-Smart-Farming-System.pdf" target="_blank" class="flex items-center space-x-1 text-indigo-400 hover:text-indigo-300 transition-colors">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Download PDF</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      </section>
+
+      <!-- Community & Outreach Section -->
+      <section class="py-16 border-t border-white/10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4 text-white tracking-wider">COMMUNITY & OUTREACH</h2>
+            <p class="text-gray-300 max-w-3xl mx-auto">
+              A gallery of initiatives where I engaged with the community through STEM projects, workshops, and presentations.
+            </p>
+          </div>
+
+          <!-- Gallery Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- STEM Workshop Card -->
+            <div 
+              class="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden transition-all duration-300 transform hover:-translate-y-2"
+              @click="open = true; activeProject = { 
+                title: 'STEM Workshop', 
+                desc: 'Hands-on coding workshop introducing Arduino programming and Python fundamentals to high school students, fostering interest in engineering and computer science.', 
+                images: ['./img/Coderina FLL/photo_2025-10-02_02-24-26.jpg', './img/Coderina FLL/photo_2025-10-02_02-24-39.jpg', './img/Coderina FLL/photo_2025-10-02_02-24-42.jpg'] 
+              }"
+            >
+              <div class="relative">
+                <img src="./img/Coderina FLL/photo_2025-10-02_02-24-55.jpg" alt="STEM Workshop" class="w-full h-48 object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Click to view more
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">STEM Workshop</h3>
+                <p class="text-gray-300 text-sm">Lego Robotics + Python session for high school students.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="px-2 py-1 bg-blue-600 text-white text-xs rounded">Education</span>
+                  <span class="px-2 py-1 bg-purple-600 text-white text-xs rounded">Lego</span>
+                  <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">Python</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Community Tech Talk Card -->
+            <div 
+              class="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden transition-all duration-300 transform hover:-translate-y-2"
+              @click="open = true; activeProject = { 
+                title: 'Community Water Project', 
+                desc: 'Presented IoT applications in agriculture to local farmers, demonstrating how technology can improve farming efficiency and crop monitoring.', 
+                images: ['./img/MTN/Dignitaries-inspecting-the-digital-borehole.webp', './img/MTN/photo_2025-10-02_13-21-19.jpg'] 
+              }"
+            >
+              <div class="relative">
+                <img src="./img/MTN/photo_2025-10-02_13-21-19.jpg" alt="Tech Talk" class="w-full h-48 object-cover bg-white">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Click to view more
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">Community Water Project - MTN</h3>
+                <p class="text-gray-300 text-sm">IoT in smart boreholes for local High School.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="px-2 py-1 bg-green-600 text-white text-xs rounded">IoT</span>
+                  <span class="px-2 py-1 bg-teal-600 text-white text-xs rounded">Water</span>
+                  <a href="https://ameyawdebrah.com/mtn-employee-volunteers-end-yello-care-hands-over-containerized-ict-lab-digital-borehole-and-other-amenities/" target="_blank"><span class="px-2 py-1 bg-yellow-600 text-white text-xs rounded">Read Article</span></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- National Digital Literacy Project Card -->
+            <div 
+              class="bg-gray-800 rounded-lg shadow-lg hover:shadow-2xl cursor-pointer overflow-hidden transition-all duration-300 transform hover:-translate-y-2"
+              @click="open = true; activeProject = { 
+                title: 'NSBE USC Activities', 
+                desc: 'Active participation in National Society of Black Engineers USC chapter events, mentoring programs, and diversity initiatives in STEM fields.', 
+                images: ['./img/Workshop/photo_2025-10-02_02-25-28.jpg', './img/Workshop/photo_2025-10-02_02-25-33.jpg', './img/Workshop/photo_2025-10-02_02-25-37.jpg'] 
+              }"
+            >
+              <div class="relative">
+                <img src="./img/Workshop/photo_2025-10-02_02-25-23.jpg" alt="NSBE USC Activities" class="w-full h-48 object-cover bg-white">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                <div class="absolute bottom-3 right-3 bg-black/70 text-white px-3 py-1 rounded-full text-xs font-medium">
+                  Click to view more
+                </div>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white mb-2">National Digital Literacy Project</h3>
+                <p class="text-gray-300 text-sm">Mentorship in engineering and digital literacy initiatives.</p>
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span class="px-2 py-1 bg-red-600 text-white text-xs rounded">Arduino</span>
+                  <span class="px-2 py-1 bg-yellow-600 text-white text-xs rounded">Mentorship</span>
+                  <span class="px-2 py-1 bg-orange-600 text-white text-xs rounded">NDLP</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Modal (Carousel Popup) -->
+      <div 
+        class="fixed inset-0 bg-black/90 flex items-center justify-center z-50" 
+        x-show="open"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0"
+        x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0"
+      >
+        <div class="relative bg-gray-900 rounded-lg shadow-2xl max-w-4xl w-full mx-4 p-6" @click.away="open = false">
+          <!-- Close Button -->
+          <button 
+            class="absolute top-4 right-4 text-white hover:text-gray-300 text-3xl font-bold z-10" 
+            @click="open = false"
+          >
+            &times;
+          </button>
+          
+          <!-- Content -->
+          <div class="text-center">
+            <h3 class="text-3xl font-bold mb-4 text-white" x-text="activeProject?.title"></h3>
+            <p class="text-gray-400 mb-6 text-lg leading-relaxed" x-text="activeProject?.desc"></p>
+            
+            <!-- Carousel -->
+            <div x-data="{ index: 0 }" class="relative">
+              <div class="relative overflow-hidden rounded-lg">
+                <template x-for="(image, i) in activeProject.images" :key="i">
+                  <div 
+                    x-show="index === i"
+                    x-transition:enter="transition ease-in-out duration-500"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition ease-in-out duration-500"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="flex justify-center"
+                  >
+                    <img 
+                      :src="image" 
+                      :alt="activeProject?.title + ' - Image ' + (i + 1)"
+                      class="max-w-full max-h-96 object-contain rounded-lg"
+                    >
+                  </div>
+                </template>
+                
+                <!-- Previous Button -->
+                <button 
+                  x-show="activeProject.images && activeProject.images.length > 1"
+                  class="absolute top-1/2 left-4 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-200"
+                  @click="index = (index - 1 + activeProject.images.length) % activeProject.images.length"
+                >
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                
+                <!-- Next Button -->
+                <button 
+                  x-show="activeProject.images && activeProject.images.length > 1"
+                  class="absolute top-1/2 right-4 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full transition-all duration-200"
+                  @click="index = (index + 1) % activeProject.images.length"
+                >
+                  <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                  </button>
+              </div>
+              
+              <!-- Dots Navigation -->
+              <div 
+                x-show="activeProject.images && activeProject.images.length > 1"
+                class="flex justify-center mt-6 space-x-2"
+              >
+                <template x-for="(image, i) in activeProject.images" :key="i">
+                  <button 
+                    class="w-3 h-3 rounded-full transition-all duration-200"
+                    :class="index === i ? 'bg-indigo-500 scale-125' : 'bg-gray-500 hover:bg-gray-400'"
+                    @click="index = i"
+                  ></button>
+                </template>
+              </div>
+              
+              <!-- Image Counter -->
+              <div 
+                x-show="activeProject.images && activeProject.images.length > 1"
+                class="text-center mt-4"
+              >
+                <span class="text-gray-400 text-sm" x-text="`${index + 1} of ${activeProject.images?.length || 0}`"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/5 border-t border-white/10">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8">
+        <div class="flex justify-center space-x-6">
+          <a href="https://www.linkedin.com/in/danielfrimps/" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Daniel-Frimpong-tech" target="_blank" class="text-gray-400 hover:text-indigo-400 transition-colors duration-300">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+        </div>
+        <div class="mt-8 text-center">
+          <p class="text-gray-400">&copy; 2025 Daniel Amoako-Frimpong. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
